@@ -1,2 +1,1 @@
-//document.getElementsByTagName("body")[0].style.backgroundImage = "url('/icons/semillas-de-marihuana.png')"; 
-document.getElementsByTagName("body")[0].style.backgroundColor = "pink"; 
+window.open('popup.htm',"ventana-poup",'width=400,height=250');
