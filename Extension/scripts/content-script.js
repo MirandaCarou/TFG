@@ -7,14 +7,21 @@ function abrirpoup(){
 abrirpoup();
 
 const popup = document.createElement("div");
-popup.style.backgroundColor = "red";
+popup.style.backgroundColor = "blue"
 popup.id = "popup";
+popup.style.marginLeft = "35%";
+popup.style.backgroundImage = "url('imagen.png')";
+popup.style.zIndex = "10000";
 popup.style.position = "absolute";
 popup.style.height = "500px";
 popup.style.width = "500px";
 popup.textContent = "Esto es un div insertado con JS.";
 
-const app = document.querySelector("#fusion-app"); // <div id="app">App</div>
-
+const app = document.querySelector("#fusion-app");
 app.insertAdjacentElement("beforebegin", popup);
-//document.getElementsByClassName('ctn_head').inner;
+
+//const infocookie = document.querySelector("#didomi-host");
+ var a = document.getElementById("didomi-host");
+ a.style.display = "none";
+
+
