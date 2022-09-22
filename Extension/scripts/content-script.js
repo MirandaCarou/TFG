@@ -12,6 +12,35 @@ abrirpoup();
  var a = document.getElementById("didomi-host");
  a.style.display = "none";
 */
+
+//INTENTO CON ADDLISTENER
+/**
+ function aceptarCookies(){ 
+    if(document.getElementById("didomi-notice-agree-button")){
+        const a = document.getElementById("didomi-notice-agree-button");
+        a.click();
+        disponible = true;
+    }else{
+        console.log("Aqui aun no cargo la pagina a tiempo");
+        disponible = false;
+    }  
+}
+
+function temporizador() {
+    identificadorTiempoDeEspera = setTimeout(aceptarCookies, 200);
+}
+function comprobarDisponibilidad() {
+    while(disponible != true){
+        temporizador();
+    }  
+}
+
+document.body.addEventListener("onload",comprobarDisponibilidad);
+
+ */
+let identificadorTiempoDeEspera;
+let cookiesAceptadas = false;
+
 function mostrarPopup() {
     const popup = document.createElement("div");
     popup.style.backgroundColor = "red"
@@ -28,8 +57,25 @@ function mostrarPopup() {
 }
 
 function aceptarCookies(){
-    var a = document.getElementById("didomi-notice-agree-button");
-    a.click();
-    mostrarPopup();
+    const a = document.getElementById("didomi-notice-agree-button");
+    console.log(a);
+    a.click();   
 }
-aceptarCookies();
+
+function temporizadorDeRetraso(cookiesAceptadas) {
+    if(!cookiesAceptadas){
+        identificadorTiempoDeEspera = setTimeout(comprobarDisponibilidad, 200);
+    }   
+}
+function comprobarDisponibilidad() {
+    if(document.getElementById("didomi-notice-agree-button")){
+        aceptarCookies();
+        cookiesAceptadas = true;
+        //mostrarPopup();
+    }else{
+        console.log("Aqui aun no cargo la pagina a tiempo");
+        temporizadorDeRetraso();
+    }
+    
+}
+temporizadorDeRetraso();
