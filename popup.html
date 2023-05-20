@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Extension de bloqueo de cookies</title>
+  <link rel="stylesheet" href="css/popup.css">
+  <script src="popup.js"></script>
+</head>
+<body>
+  <h1>Extension de bloqueo de cookies</h1>
+  <p>
+    Esta extensión bloquea todas las cookies que no sean esenciales en el sitio web actual,
+    y permite agregar o eliminar cookies esenciales a la lista blanca.
+  </p>
+  <hr>
+  <p>
+    Estado de bloqueo de cookies:
+    <button id="blockButton">Bloquear cookies no esenciales</button>
+    <button id="unblockButton">Desbloquear cookies no esenciales</button>
+  </p>
+  <hr>
+  <p>
+    Agregar o eliminar cookies esenciales:
+    <input type="text" id="cookieName" placeholder="Nombre de la cookie">
+    <button id="addCookieButton">Agregar cookie esencial</button>
+    <button id="removeCookieButton">Eliminar cookie esencial</button>
+  </p>
+  <p id="statusMessage"></p>
+</body>
+</html>
